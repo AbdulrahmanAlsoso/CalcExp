@@ -6,10 +6,10 @@ namespace CalcExp.Entities
     public class OutCome
     {
         public bool _isDeleted { get; set; }
-        private int _no { get;set; }
+        public int _no { get;set; }
         private DateTime _dateOfOutCome { get; set; }
         private string _description { get; set;}
-        private decimal _amount { get; set;}
+        public decimal _amount { get; private set;}
         private TypeOfExpenses _typeOfExpenses { get; set;}
         public OutCome(int no ,DateTime date , string description, decimal amount , TypeOfExpenses type)
         {
