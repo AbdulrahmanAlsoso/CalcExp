@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using CalcExp.Data;
 using CalcExp.Entities;
@@ -29,6 +28,6 @@ namespace CulcExp.Entities
             return $"Name : {_name} ,Level of priority: {_priority}\n" +
             $"Description : {_description}";
         }
-    }  
+    }
 
 }
