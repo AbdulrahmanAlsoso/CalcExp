@@ -7,7 +7,7 @@ namespace CalcExp.Entities
     {
         public bool _isDeleted { get; set; }
         public int _no { get;set; }
-        private DateTime _dateOfOutCome { get; set; }
+        public DateTime _dateOfOutCome { get;private set; }
         private string _description { get; set;}
         public decimal _amount { get; private set;}
         private TypeOfExpenses _typeOfExpenses { get; set;}
