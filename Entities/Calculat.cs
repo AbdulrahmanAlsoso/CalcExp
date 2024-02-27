@@ -20,8 +20,8 @@ namespace CulcExp.Entities
         public static decimal CalcInComeInSpicificTime(List<InCome> inComes,DateTime Date, theSameSpecificTime dateintendedToCalc){
             decimal Total =0m;
             foreach(var income in inComes){
-                if (dateintendedToCalc(income.,Date)){
-                    Total+=income.
+                if (dateintendedToCalc(income._dateOfInComing,Date)&&!income._isDeleted){
+                    Total+=income._amount;
                 }
             }
             return Total;
