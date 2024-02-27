@@ -7,9 +7,9 @@ namespace CalcExp.Entities
         private int _no { get;set; }
         public bool _isDeleted { get; set;}
         private string _description { get; set;}
-        private DateTime _dateOfInComing { get; set;}
+        public DateTime _dateOfInComing { get;private set;}
         private string _from { get; set;}
-        private decimal _amount { get; set;}
+        public decimal _amount { get;private set;}
         public InCome(int no,string description, DateTime date, string from, decimal amount)
         {
             _no = no; _description = description;
