@@ -5,6 +5,7 @@ namespace CalcExp.Data
 {
     public class AppDBContext:DbContext
     {
+        public DbSet<User> users {get;set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
