@@ -1,11 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace CalcExp.Data
 {
     public class AppDBContext:DbContext
     {
-        public DbSet<User> users {get;set;}
+        public DbSet<User> Users {get;set;}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserConfiguration).Assembly);
+            base.OnModelCreating(modelBuilder);
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -15,4 +21,6 @@ namespace CalcExp.Data
             optionsBuilder.UseSqlServer(constr);
         }
     }
+
+
 }

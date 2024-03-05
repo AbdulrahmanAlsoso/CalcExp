@@ -11,28 +11,39 @@ namespace CalcExp
         public static void Main(){
             Tester.Start();
         }
+
         private static void Start(){
             User validUser ;
-            Console.Clear();
             do{
                 validUser =UserManagement.login();
-                Console.Clear();
             }while(validUser==null||(validUser.Name==""&&validUser.Password==""));
             showOption(validUser);
         }
+
         private static void showOption(User user){
             var optionKey = 'i';
-            printOption();
             do{
+               printOption();
+                 char.TryParse( Console.ReadLine(),out optionKey);
+                if (optionKey == null)
+                {
+                    Utility.PrintMessage("pleas enter option letter.", ConsoleColor.Red);
+                    continue;
+                }
+
                 switch (optionKey){
                     case 'A':
-                        break;
-                    default:Utility.PrintMessage("pleas enter option letter.",ConsoleColor.Red);
+                        Console.WriteLine("option A. ");
+                        Console.ReadKey();
                         break;
                 }
-            }while(optionKey=='E');
+            }while(optionKey!='E');
+            Utility.PrintMessage("The app is exiting.", ConsoleColor.Magenta);
+            Console.ReadKey(true);
         }
+
         private static void printOption(){
+            Console.Clear();
             System.Console.WriteLine($"     -----Options-----");
             System.Console.WriteLine($"E- Enter (E) letter to exit.");
             System.Console.WriteLine($"pleas attention about case sensetiv.");
